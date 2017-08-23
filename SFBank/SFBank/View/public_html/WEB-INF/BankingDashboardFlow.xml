@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="BankingDashboardFlow">
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="ViewLoans"></view>
+    <view id="ViewAccounts"></view>
+    <task-flow-call id="ApplyLoanFlow">
+      <task-flow-reference>
+        <document>/WEB-INF/ApplyLoanFlow.xml</document>
+        <id>ApplyLoan</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-return id="Homepage"></task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <to-activity-id>Homepage</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>viewloans</from-outcome>
+        <to-activity-id>ViewLoans</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>viewaccounts</from-outcome>
+        <to-activity-id>ViewAccounts</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>apply</from-outcome>
+        <to-activity-id>ApplyLoanFlow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

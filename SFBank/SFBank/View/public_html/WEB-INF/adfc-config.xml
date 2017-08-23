@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Homepage"></view>
+  <task-flow-call id="BankingDashboardFlow">
+    <task-flow-reference>
+      <document>/WEB-INF/BankingDashboardFlow.xml</document>
+      <id>BankingDashboardFlow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__8">
+    <from-activity-id>Homepage</from-activity-id>
+    <control-flow-case id="__9">
+      <to-activity-id>BankingDashboardFlow</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
