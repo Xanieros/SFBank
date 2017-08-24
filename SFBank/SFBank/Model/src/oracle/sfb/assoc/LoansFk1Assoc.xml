@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LoansFk1Assoc"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Customer"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.sfb.entities.Customer">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Customer"/>
+      <Attr Name="_foreignKey" Value="oracle.sfb.entities.Customer.CustomersPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.sfb.entities.Customer.AccountNumber"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Loan"
+    Cardinality="-1"
+    Owner="oracle.sfb.entities.Loan">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Loan"/>
+      <Attr Name="_foreignKey" Value="oracle.sfb.entities.Loan.LoansFk1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.sfb.entities.Loan.CustomerAccountNumber"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
