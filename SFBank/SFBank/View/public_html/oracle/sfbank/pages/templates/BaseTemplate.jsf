@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>BaseTemplate</afc:display-name>
+            <afc:facet>
+                <afc:description>the image of the company</afc:description>
+                <afc:facet-name>companyLogo</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>the name of the company</afc:description>
+                <afc:facet-name>companyName</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>the main content on the page</afc:description>
+                <afc:facet-name>mainContent</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter id="pt_ps1" orientation="vertical" splitterPosition="153">
+        <f:facet name="first">
+            <af:panelSplitter id="pt_ps2">
+                <f:facet name="first">
+                    <af:facetRef facetName="companyLogo"/>
+                </f:facet>
+                <f:facet name="second">
+                    <af:facetRef facetName="companyName"/>
+                </f:facet>
+            </af:panelSplitter>
+        </f:facet>
+        <f:facet name="second">
+            <af:panelSplitter id="pt_ps3" orientation="vertical" splitterPosition="40">
+                <f:facet name="first">
+                    <af:toolbar id="pt_t1">
+                        <af:navigationPane hint="bar" id="pt_np1">
+                            <af:commandNavigationItem id="Home" text="Home" destination="Homepage"/>
+                            <af:commandNavigationItem id="Accounts" text="Accounts"/>
+                            <af:commandNavigationItem id="Services" text="Services"/>
+                        </af:navigationPane>
+                    </af:toolbar>
+                </f:facet>
+                <f:facet name="second">
+                    <af:facetRef facetName="mainContent"/>
+                </f:facet>
+            </af:panelSplitter>
+        </f:facet>
+    </af:panelSplitter>
+</af:pageTemplateDef>
