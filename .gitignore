@@ -1,2 +1,2 @@
 *.sso
-.data/*
+.data/\*.jdb
