@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Homepage</property>
+      <property
+         name="x">396.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Homepage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-98.50586</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall13">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>BankingDashboardFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">BankingDashboardFlow</property>
+      <property
+         name="x">396.70312</property>
+      <property
+         name="y">87.0459</property>
+      <property
+         name="documentReference">/WEB-INF/BankingDashboardFlow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">BankingDashboardFlow</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="View2"
+      to="TaskFlowCall13">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">B50,396.0,-44.856445,396.70312,32.695312,T50</property>
+   </ControlFlowCase>
+</SDM>
